@@ -1,6 +1,7 @@
 // define Action Type
-const INCREMENT = 'counter/INCREMENT';
-const DECREMENT = 'counter/DECREMENT';
+
+const INCREMENT = 'counter/INCREMENT' as const;// use const assertions 
+const DECREMENT = 'counter/DECREMENT' as const;
 
 // define Action Creator
 export const counterActions = {
