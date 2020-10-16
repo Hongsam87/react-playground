@@ -1,5 +1,4 @@
 // define Action Type
-
 const INCREMENT = 'counter/INCREMENT' as const;// use const assertions 
 const DECREMENT = 'counter/DECREMENT' as const;
 
@@ -12,9 +11,9 @@ export const counterActions = {
 // Action Object Type
 type IncrementAction = ReturnType<typeof counterActions.increment>;
 type DecrementAction = ReturnType<typeof counterActions.decrement>;
-type Actions = IncrementAction | DecrementAction;
+type CounterActions = IncrementAction | DecrementAction;
 
-// Reducer Value Type
+// Type declaration for state
 export type CounterState = Readonly<{
 	value: number
 }>;
@@ -25,7 +24,7 @@ const initialState: CounterState = {
 };
 
 // reducer
-export default function reducer(state: CounterState = initialState, action: Actions): CounterState {
+export default function reducer(state: CounterState = initialState, action: CounterActions): CounterState {
 	switch (action.type) {
 		case INCREMENT:
 			return {

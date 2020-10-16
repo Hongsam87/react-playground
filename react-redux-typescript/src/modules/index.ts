@@ -1,10 +1,13 @@
 import { combineReducers } from 'redux';
 import counter, { CounterState } from './counter';
+import todos, { TodosState } from './todos'
 
 export default combineReducers({
-	counter
+	counter,
+	todos
 });
 
 export type State = {
-	counter: CounterState
+	counter: CounterState,
+	todos: TodosState
 }
